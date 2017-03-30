@@ -63,13 +63,13 @@
             position.textContent = state.index() + " of " + state.size();
         }
 
-        function scrollIntoView(dir) {
+        function scrollIntoView(fwd) {
             var bCR = current.getBoundingClientRect();
             var height = window.innerHeight || document. documentElement.clientHeight;
             if (bCR.top < 0 ||       // we've scrolled past element
                 bCR.bottom > height) {// element is below the fold
-                current.scrollIntoView(dir > 0);
-                window.scrollBy(0, dir * 50);
+                current.scrollIntoView(fwd);
+                window.scrollBy(0, (fwd ? -1 : 1) * 50);
             }
         }
 
@@ -79,7 +79,7 @@
             }
             current = state.next();
             current.style.cssText = CSS_BORDER;
-            scrollIntoView(1);
+            scrollIntoView(true);
             update(state);
         }
         
@@ -89,7 +89,7 @@
             }
             current = state.previous();
             current.style.cssText = CSS_BORDER;
-            scrollIntoView(-1);
+            scrollIntoView(false);
             update(state);
         }
 
