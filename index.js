@@ -83,13 +83,13 @@
             update(state);
         }
         
-        function onprevious(-1) {
+        function onprevious(e) {
             if (current) {
                 current.style.cssText = "";
             }
             current = state.previous();
             current.style.cssText = CSS_BORDER;
-            scrollIntoView();
+            scrollIntoView(-1);
             update(state);
         }
 
