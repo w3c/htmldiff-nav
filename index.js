@@ -68,8 +68,10 @@
             var height = window.innerHeight || document. documentElement.clientHeight;
             if (bCR.top < 0) { // we've scrolled past element
                 current.scrollIntoView(true);
+                window.scrollBy(0, -50);
             } else if (bCR.bottom > height) { // element is below the fold
                 current.scrollIntoView(false);
+                window.scrollBy(0, 50);
             }
         }
 
