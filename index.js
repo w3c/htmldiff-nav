@@ -65,14 +65,6 @@
             position.textContent = state.index() + " of " + state.size();
         }
 
-        function getRelationshipToViewport(element) {
-            var eR = element.getBoundingClientRect();
-            var height = window.innerHeight || document. documentElement.clientHeight;
-            if (eR.top < 0) return "above";
-            if (eR.bottom > height) return "below";
-            return "visible";
-        }
-        
         function scrollIntoView() {
             var bCR = current.getBoundingClientRect();
             var height = window.innerHeight || document. documentElement.clientHeight;
