@@ -43,6 +43,7 @@
         var previous = document.createElement("div");
         var next = document.createElement("div");
         var position = document.createElement("span");
+        var warning = document.querySelector(".annoying-warning");
         display.appendChild(position);
         container.appendChild(display);
         container.appendChild(previous);
@@ -74,6 +75,9 @@
         }
 
         function onnext(e) {
+            if (warning && warning.open) {
+                warning.open = false;
+            }
             if (current) {
                 current.style.cssText = "";
             }
@@ -84,6 +88,9 @@
         }
         
         function onprevious(e) {
+            if (warning && warning.open) {
+                warning.open = false;
+            }
             if (current) {
                 current.style.cssText = "";
             }
