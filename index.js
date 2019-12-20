@@ -108,7 +108,7 @@
             current = null;
             update(state);
         }
-        var selector = document.querySelector("script[data-navigable-selector]")? document.querySelector("script[data-navigable-selector]").dataset["navigableSector"] || "del.diff-old, ins.diff-chg, ins.diff-new";
+        var selector = document.querySelector("script[data-navigable-selector]")? document.querySelector("script[data-navigable-selector]").dataset["navigableSector"] : "del.diff-old, ins.diff-chg, ins.diff-new";
         var diffs = document.querySelectorAll(selector);
         diffs = Array.prototype.filter.call(diffs, function(e) {
             return e.offsetWidth || e.offsetHeight || e.getClientRects().length;
