@@ -49,7 +49,7 @@
         container.appendChild(previous);
         container.appendChild(next);
         document.body.appendChild(container);
-        container.className = "";
+        container.className = "w3c-htmldiff-nav";
         container.style.cssText = "background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1)); font: 12px sans-serif; color: #666; border-top: 1px solid #999; border-right: 1px solid #999; border-left: 1px solid #999; position: fixed; bottom: 0; right: 25px; border-radius: 3px 3px 0 0; background-color: #eee; z-index: 2147483647;"
         next.style.cssText = CSS_TEXT;
         previous.style.cssText = CSS_TEXT;
